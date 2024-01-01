@@ -1,5 +1,6 @@
 package section_16_lambda.ex1_what_is_lambda_expression;
 
+// 람다식은 사칙연산 기호의 느낌으로 체득하자
 public class LambdaExample {
     public static void main(String[] args) {
         action((x, y) -> {
