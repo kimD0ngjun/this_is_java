@@ -1,4 +1,4 @@
-package section_18_data_IO.ex05_bufffered_stream;
+package section_18_data_IO.ex05_buffered_stream;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
