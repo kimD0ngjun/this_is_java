@@ -6,7 +6,7 @@ import java.io.FileReader;
 public class ReadLineExample {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(
-                new FileReader("src/section_18_data_IO/ex05_buffered_stream/buffer_stream/ReadLineExample.java")
+                new FileReader("src/section_18_data_IO/ex07_buffered_streamm/ReadLineExample.java")
         );
 
         int lineNo = 1;
