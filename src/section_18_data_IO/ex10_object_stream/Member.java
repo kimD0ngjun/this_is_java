@@ -1,9 +1,11 @@
 package section_18_data_IO.ex10_object_stream;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class Member implements Serializable {
-    private static final long serialVersionUID = -622284561026719240L;
+    @Serial
+    private static final long serialVersionUID = 5609410980801882073L;
     private String id;
     private String name;
 
