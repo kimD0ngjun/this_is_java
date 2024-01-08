@@ -1,4 +1,4 @@
-package section_19_network.ex03_tcp_networking;
+package section_19_network.ex03_tcp_networking.server_client_example;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
