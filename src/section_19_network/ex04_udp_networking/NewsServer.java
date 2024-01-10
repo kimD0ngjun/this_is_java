@@ -4,6 +4,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketAddress;
 import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 public class NewsServer {
     private static DatagramSocket datagramSocket = null;
@@ -14,6 +15,20 @@ public class NewsServer {
         System.out.println("------------------------------------------------");
 
         // UDP 서버 시작
+        startServer();
+
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+            String key = scanner.nextLine();
+            if(key.toLowerCase().equals("q")) {
+                break;
+            }
+        }
+
+        scanner.close();
+
+        // TCP 서버 종료
+        stopServer();
     }
 
     public static void startServer() {
@@ -56,5 +71,11 @@ public class NewsServer {
             }
         };
         thread.start();
+    }
+
+    public static void stopServer() {
+        // DatagramSocket을 닫고 Port 언바인딩
+        datagramSocket.close();
+        System.out.println("[서버] 종료");
     }
 }
