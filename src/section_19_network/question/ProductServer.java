@@ -25,7 +25,7 @@ public class ProductServer {
     // ProductServer 메소드
     public void start() throws IOException {
         serverSocket = new ServerSocket(10000);
-        System.out.println("[server] start");
+        System.out.println("[server] started");
 
         Thread thread = new Thread(() -> {
             try {
@@ -47,10 +47,15 @@ public class ProductServer {
         DataOutputStream dos;
 
         public SocketClient(ProductServer productServer, Socket socket) throws IOException {
-            this.productServer = productServer;
-            this.socket = socket;
-            this.dis = new DataInputStream(socket.getInputStream());
-            this.dos = new DataOutputStream(socket.getOutputStream());
+            try {
+                this.productServer = productServer;
+                this.socket = socket;
+                this.dis = new DataInputStream(socket.getInputStream());
+                this.dos = new DataOutputStream(socket.getOutputStream());
+                receive();
+            } catch (IOException e) {
+                close();
+            }
         }
 
         //TODO: JSON 받기
