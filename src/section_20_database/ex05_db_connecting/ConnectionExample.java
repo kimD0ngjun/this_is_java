@@ -11,6 +11,7 @@ public class ConnectionExample {
             // JDBC Driver 등록
             Class.forName("com.mysql.cj.jdbc.Driver");
             // 문자열로 주어진 JDBC Driver 클래스를 Build Path에서 찾고, 메모리로 로딩
+            // JDBC Driver 클래스의 static 블록이 실행되면서 DriverManager에 JDBC Driver 객체를 등록
 
             // 연결하기
             connection = DriverManager.getConnection(
@@ -22,7 +23,7 @@ public class ConnectionExample {
 
             System.out.println("connection succeed");
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // Build Path에서 JDBC Driver 클래스를 찾지 못하면 예외 발생
         } finally {
             if(connection != null) {
                 try {
