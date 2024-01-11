@@ -42,4 +42,13 @@ public class ProductClient {
         });
         thread.start();
     }
+
+    public void send(String json) throws IOException {
+        dos.writeUTF(json);
+        dos.flush();
+    }
+
+    public void disconnect() throws IOException {
+        socket.close();
+    }
 }
