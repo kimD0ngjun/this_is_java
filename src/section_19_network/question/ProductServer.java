@@ -10,17 +10,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class ProductServer {
     // ProductServer 필드
-    ServerSocket serverSocket;
-    ExecutorService threadPool = Executors.newFixedThreadPool(100);
-    List<SocketClient> products = Collections.synchronizedList(new ArrayList<>());
+    private ServerSocket serverSocket;
+    private ExecutorService threadPool = Executors.newFixedThreadPool(100);
+    private List<Product> products = new Vector<>();
 
     // ProductServer 메소드
     public void start() throws IOException {
@@ -67,16 +69,16 @@ public class ProductServer {
                     JSONParser parser = new JSONParser();
                     JSONObject jsonObject = (JSONObject) parser.parse(receiveJson);
 
-                    String menu = (String) jsonObject.get("menu");
+                    int menu = (int) jsonObject.get("menu");
                     switch(menu) {
-                        case "1":
-                            // case 추가
-                        case "2":
-                            // case 추가
-                        case "3":
-                            // case 추가
-                        case "4":
-                            // case 추가
+                        case 0:
+                            // 그냥 메뉴 조회 case 추가
+                        case 1:
+                            // 1번 누르면 생성 case 추가
+                        case 2:
+                            // 2번 누르면 수정 case 추가
+                        case 3:
+                            // 3번 누르면 삭제 case 추가
                     }
 
                 } catch (IOException | ParseException e) {
@@ -84,9 +86,26 @@ public class ProductServer {
             });
         }
 
-        //TODO: JSON 보내기
-        public void send(String json) throws IOException {
-            dos.writeUTF(json);
+        //TODO: case별 메소드
+//        public void send(String json) throws IOException {
+//            dos.writeUTF(json);
+//            dos.flush();
+//        }
+        public void list(JSONObject request) throws IOException {
+            JSONArray data = new JSONArray();
+            for(Product p: products) {
+                JSONObject product = new JSONObject();
+                product.put("no", p.getNo());
+                product.put("name", p.getName());
+                product.put("price", p.getPrice());
+                product.put("stock", p.getStock());
+                data.add(product);
+            }
+
+            JSONObject response = new JSONObject();
+            response.put("status", "success");
+            response.put("data", data);
+            dos.writeUTF(response.toString());
             dos.flush();
         }
 
