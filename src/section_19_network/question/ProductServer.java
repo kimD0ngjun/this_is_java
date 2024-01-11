@@ -17,9 +17,28 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class ProductServer {
+    // ProductServer 필드
     ServerSocket serverSocket;
     ExecutorService threadPool = Executors.newFixedThreadPool(100);
     List<SocketClient> products = Collections.synchronizedList(new ArrayList<>());
+
+    // ProductServer 메소드
+    public void start() throws IOException {
+        serverSocket = new ServerSocket(10000);
+        System.out.println("[server] start");
+
+        Thread thread = new Thread(() -> {
+            try {
+                while(true) {
+                    Socket socket = serverSocket.accept();
+                    SocketClient sc = new SocketClient(this, socket);
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        thread.start();
+    }
 
     class SocketClient {
         ProductServer productServer;
