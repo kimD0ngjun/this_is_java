@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class ProductServer {
     ServerSocket serverSocket;
@@ -29,6 +32,43 @@ public class ProductServer {
             this.socket = socket;
             this.dis = new DataInputStream(socket.getInputStream());
             this.dos = new DataOutputStream(socket.getOutputStream());
+        }
+
+        //TODO: JSON 받기
+        public void receive() {
+            productServer.threadPool.execute(() -> {
+                try {
+                    String receiveJson = dis.readUTF();
+
+                    JSONParser parser = new JSONParser();
+                    JSONObject jsonObject = (JSONObject) parser.parse(receiveJson);
+
+                    String menu = (String) jsonObject.get("menu");
+                    switch(menu) {
+                        case "1":
+                            // case 추가
+                        case "2":
+                            // case 추가
+                        case "3":
+                            // case 추가
+                        case "4":
+                            // case 추가
+                    }
+
+                } catch (IOException | ParseException e) {
+                }
+            });
+        }
+
+        //TODO: JSON 보내기
+        public void send(String json) throws IOException {
+            dos.writeUTF(json);
+            dos.flush();
+        }
+
+        //TODO: 연결 종료
+        public void close() throws IOException {
+            socket.close();
         }
     }
 }
