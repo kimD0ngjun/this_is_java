@@ -21,4 +21,20 @@ public class Product {
     public int getStock() {
         return stock;
     }
+
+    public void setNo(int no) {
+        this.no = no;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 }

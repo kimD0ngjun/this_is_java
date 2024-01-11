@@ -23,6 +23,7 @@ public class ProductServer {
     private ServerSocket serverSocket;
     private ExecutorService threadPool = Executors.newFixedThreadPool(100);
     private List<Product> products = new Vector<>();
+    private int sequence;
 
     // ProductServer 메소드
     public void start() throws IOException {
@@ -71,13 +72,13 @@ public class ProductServer {
 
                     int menu = (int) jsonObject.get("menu");
                     switch(menu) {
-                        case 0:
+                        case 0: list();
                             // 그냥 메뉴 조회 case 추가
-                        case 1:
+                        case 1: create(jsonObject);
                             // 1번 누르면 생성 case 추가
-                        case 2:
+                        case 2: update(jsonObject);
                             // 2번 누르면 수정 case 추가
-                        case 3:
+                        case 3: delete(jsonObject);
                             // 3번 누르면 삭제 case 추가
                     }
 
@@ -91,7 +92,8 @@ public class ProductServer {
 //            dos.writeUTF(json);
 //            dos.flush();
 //        }
-        public void list(JSONObject request) throws IOException {
+        // 0번 케이스
+        public void list() throws IOException {
             JSONArray data = new JSONArray();
             for(Product p: products) {
                 JSONObject product = new JSONObject();
@@ -105,6 +107,65 @@ public class ProductServer {
             JSONObject response = new JSONObject();
             response.put("status", "success");
             response.put("data", data);
+            dos.writeUTF(response.toString());
+            dos.flush();
+        }
+
+        // 1번 케이스
+        public void create(JSONObject request) throws IOException {
+            // 요청 처리
+            JSONObject data = (JSONObject) request.get("data");
+            Product product = new Product();
+            product.setNo(++sequence);
+            product.setName((String) data.get("name"));
+            product.setPrice((int) data.get("price"));
+            product.setStock((int) data.get("stock"));
+
+            // 응답 보내기
+            JSONObject response = new JSONObject();
+            response.put("status", "success");
+            response.put("data", new JSONObject());
+            dos.writeUTF(response.toString());
+            dos.flush();
+        }
+
+        // 2번 케이스
+        public void update(JSONObject request) throws IOException {
+            // 요청 처리하기
+            JSONObject data = (JSONObject) request.get("data");
+
+            for(Product product: products) {
+                if(product.getNo() == (int) data.get("no")) {
+                    product.setNo((int) data.get("no"));
+                    product.setName((String) data.get("name"));
+                    product.setPrice((int) data.get("price"));
+                    product.setStock((int) data.get("stock"));
+                }
+            }
+
+            // 응답 보내기
+            JSONObject response = new JSONObject();
+            response.put("status", "success");
+            response.put("data", new JSONObject());
+            dos.writeUTF(response.toString());
+            dos.flush();
+        }
+
+        // 3반 케이스
+        public void delete(JSONObject request) throws IOException {
+            // 요청 처리하기
+            JSONObject data = (JSONObject) request.get("data");
+
+            for(Product product: products) {
+                if(product.getNo() == (int) data.get("no")) {
+                    products.remove(product);
+                }
+            }
+
+            // 응답 보내기
+            JSONObject response = new JSONObject();
+            response.put("status", "success");
+            response.put("data", new JSONObject());
             dos.writeUTF(response.toString());
             dos.flush();
         }
