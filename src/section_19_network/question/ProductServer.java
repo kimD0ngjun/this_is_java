@@ -43,7 +43,14 @@ public class ProductServer {
         thread.start();
     }
 
-    class SocketClient {
+    // 서버 종료
+    public void stop() throws IOException {
+        serverSocket.close();
+        threadPool.shutdownNow();
+        System.out.println("[server] disconnected");
+    }
+
+    public class SocketClient {
         ProductServer productServer;
         Socket socket;
         DataInputStream dis;
