@@ -18,8 +18,8 @@ public class BoardInsertExample {
             // 연결하기
             connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/thisisjava",
-                    "root",
-                    "sonic30810@"
+                    "",
+                    ""
             );
 
             // 매개변수화된 SQL 문 작성
