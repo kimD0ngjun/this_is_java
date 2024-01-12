@@ -16,10 +16,11 @@ public class ConnectionExample {
             // 연결하기
             connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/thisisjava",
-                    "java",
-                    "mysql"
+                    "",
+                    ""
             );
             //TODO : url 매개변수 = jdbc:mysql://<IP 주소>:<포트>/<DB 이름>
+            //TODO : user 매개변수 : root, password 매개변수 : 내가 설정한 비밀번호
 
             System.out.println("connection succeed");
         } catch (ClassNotFoundException | SQLException e) {
