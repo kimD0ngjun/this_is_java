@@ -15,3 +15,32 @@
 > <br />
 > <br />
 > 계좌 이체의 경우에서도 입금이 실패했는데, 출금이 성공하는 모순적인 상황이 발생할 수는 없는 것을 생각하면 되겠다.
+
+```java
+Connection conn = null;
+
+try {
+    //트랜잭션 시작
+        
+    conn.setAutoCommit(false); // 소작업 별도 처리 방지를 위한 자동 커밋 끄
+
+    // 소작업 처리    
+        
+    conn.commit(); // 소작업들 전부 성공 처리
+
+    //트랜잭션 종료 
+} catch (Exception e) {
+    try {
+        //롤백 -> 모두 실패 처리
+        conn.rollback();
+    } catch (SQLException e1) {}
+} finally {
+    if(conn != null) {
+        try {
+            //원래대로 자동 커밋 기능 켜기
+            conn.setAutoCommit(true);
+            
+            conn.close(); //연결 끊기
+        } catch (SQLException e) {}
+}
+```
