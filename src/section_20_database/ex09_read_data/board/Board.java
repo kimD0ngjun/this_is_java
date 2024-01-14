@@ -1,4 +1,4 @@
-package section_20_database.ex09_read_data;
+package section_20_database.ex09_read_data.board;
 
 import java.util.Date;
 

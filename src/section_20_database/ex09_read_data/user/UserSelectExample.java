@@ -1,4 +1,4 @@
-package section_20_database.ex09_read_data;
+package section_20_database.ex09_read_data.user;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

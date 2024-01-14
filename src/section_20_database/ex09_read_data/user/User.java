@@ -1,4 +1,4 @@
-package section_20_database.ex09_read_data;
+package section_20_database.ex09_read_data.user;
 
 public class User {
     private String userId;
