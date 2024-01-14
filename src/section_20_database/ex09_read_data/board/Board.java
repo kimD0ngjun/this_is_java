@@ -1,5 +1,6 @@
 package section_20_database.ex09_read_data.board;
 
+import java.sql.Blob;
 import java.util.Date;
 
 public class Board {
@@ -9,6 +10,15 @@ public class Board {
     private String bwriter;
     private Date bdate;
     private String bfilename;
+    private Blob bfiledata;
+
+    public Blob getBfiledata() {
+        return bfiledata;
+    }
+
+    public void setBfiledata(Blob bfiledata) {
+        this.bfiledata = bfiledata;
+    }
 
     public int getBno() {
         return bno;
@@ -67,6 +77,7 @@ public class Board {
                 ", bwriter='" + bwriter + '\'' +
                 ", bdate=" + bdate +
                 ", bfilename='" + bfilename + '\'' +
+                ", bfiledata=" + bfiledata +
                 '}';
     }
 }
