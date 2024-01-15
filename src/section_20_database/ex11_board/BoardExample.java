@@ -41,14 +41,17 @@ public class BoardExample {
 
     public void create() {
         System.out.println("create");
+        list();
     }
 
     public void read() {
         System.out.println("read");
+        list();
     }
 
     public void clear() {
         System.out.println("clear");
+        list();
     }
 
     public void exit() {
