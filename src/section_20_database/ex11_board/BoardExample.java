@@ -187,7 +187,7 @@ public class BoardExample {
                 System. out.println();
 
                 if (menuNumber.equals("1")) {
-
+                    update(board);
                 } else if (menuNumber.equals("2")) {
 
                 }
@@ -203,6 +203,45 @@ public class BoardExample {
             exit();
         }
 
+        list();
+    }
+
+    // 수정
+    public void update(Board board) {
+        // 수정 내용 입력 받기
+        System.out.println("[수정 내용 입력]");
+        System.out.print("제목: ");
+        board.setBtitle(scanner.nextLine());
+        System.out.print("내용: ");
+        board.setBcontent(scanner.nextLine());
+        System.out.print("작성자: ");
+        board.setBwriter(scanner.nextLine());
+
+        // 보조 메뉴 출력
+        System.out.println("------------------------------------------------------");
+        System.out.println("보조 메뉴: 1.Ok | 2.Cancel");
+        System.out.print("메뉴 선택: ");
+        String menuNumber = scanner.nextLine();
+
+        if (menuNumber.equals("1")) {
+            try {
+                String sql = "" +
+                    "UPDATE boards SET btitle= ?, bcontent= ?, bwriter=? " +
+                    "WHERE bno=?";
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+                preparedStatement.setString(1, board.getBtitle());
+                preparedStatement.setString(2, board.getBcontent());
+                preparedStatement.setString(3, board.getBwriter());
+                preparedStatement.setInt(4, board.getBno());
+
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+                exit();
+            }
+        }
         list();
     }
 
