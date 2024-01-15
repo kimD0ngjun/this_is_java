@@ -1,12 +1,28 @@
 package section_20_database.ex11_board;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Scanner;
 
 public class BoardExample {
     // TODO : field
     private Scanner scanner = new Scanner(System.in);
+    private Connection connection;
 
     // TODO : constructor
+    public BoardExample() {
+        try {
+            // JDBC 드라이버 등록
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // 연결하기
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/thisisjava",
+                    "",
+                    ""
+            );
+        }
+    }
 
     // TODO : method
     // 게시물 리스트
