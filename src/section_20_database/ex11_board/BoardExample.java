@@ -287,6 +287,13 @@ public class BoardExample {
     }
 
     public void exit() {
+        if(connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {}
+        }
+
+        System.out.println("** 게시판 종료 **");
         System.exit(0);
     }
 
