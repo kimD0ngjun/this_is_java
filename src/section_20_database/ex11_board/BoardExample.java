@@ -189,7 +189,7 @@ public class BoardExample {
                 if (menuNumber.equals("1")) {
                     update(board);
                 } else if (menuNumber.equals("2")) {
-
+                    delete(board);
                 }
 
                 System.out.println("#############");
@@ -242,6 +242,23 @@ public class BoardExample {
                 exit();
             }
         }
+        list();
+    }
+
+    // 삭제
+    public void delete(Board board) {
+        try {
+            String sql = "DELETE FROM boards WHERE bno=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, board.getBno());
+
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            exit();
+        }
+
         list();
     }
 
