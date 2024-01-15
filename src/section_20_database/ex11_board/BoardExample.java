@@ -38,8 +38,6 @@ public class BoardExample {
         System.out.println("-------------------------------------------------------");
         System.out.printf("%-6s%-12s%-16s%-40s\n", "no", "writer", "date", "title");
         System.out.println("-------------------------------------------------------");
-//        System.out.printf("%-6s%-12s%-16s%-40s \n", "1", "winter", "2022.01.27", "게시판에 오신 것을 환영합니다.");
-//        System.out.printf("%-6s%-12s%-16s%-40s \n", "2", "winter", "2022.01.27", "올 겨울은 많이 춥습니다.");
 
         // boards 테이블에서 게시물 정보 가지고 오기
         try {
@@ -101,7 +99,6 @@ public class BoardExample {
     }
 
     public void create() {
-//        System.out.println("create");
         // 작성한 게시글 담을 Board 객체
         Board board = new Board();
 
@@ -147,7 +144,6 @@ public class BoardExample {
     }
 
     public void read() {
-//        System.out.println("read");
         System.out.println("[게시물 읽기]");
         System.out.print("bno: ");
         int bno = Integer.parseInt(scanner.nextLine());
@@ -264,7 +260,6 @@ public class BoardExample {
 
     // 게시판 전체 삭제
     public void clear() {
-//        System.out.println("clear");
         System.out.println("[게시물 전체 삭제]");
         System.out.println("-------------------------------------------------------");
         System.out.println("보조 메뉴: 1.Ok | 2.Cancel");
