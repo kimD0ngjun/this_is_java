@@ -54,6 +54,26 @@ public class BoardExample {
             // 쿼리 실행
             ResultSet resultSet = preparedStatement.executeQuery();
 
+            // Board 객체에 담아서 조회
+            while(resultSet.next()) {
+                Board board = new Board();
+
+                board.setBno(resultSet.getInt("bno"));
+                board.setBtitle(resultSet.getString("btitle"));
+                board.setBcontent(resultSet.getString("bcontent"));
+                board.setBwriter(resultSet.getString("bwriter"));
+                board.setBdate(resultSet.getDate("bdate"));
+
+                System.out.printf("%-6s%-12s%-16s%-40s \n",
+                        board.getBno(),
+                        board.getBwriter(),
+                        board.getBdate(),
+                        board.getBtitle()
+                );
+            }
+
+            resultSet.close();
+            preparedStatement.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
