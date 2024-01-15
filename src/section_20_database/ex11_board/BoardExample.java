@@ -53,6 +53,11 @@ public class BoardExample {
 
             // 쿼리 실행
             ResultSet resultSet = preparedStatement.executeQuery();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            exit();
         }
 
         mainMenu();
