@@ -1,7 +1,10 @@
 package section_20_database.ex11_board;
 
-public class BoardExample1 {
+import java.util.Scanner;
+
+public class BoardExample {
     // TODO : field
+    private Scanner scanner = new Scanner(System.in);
 
     // TODO : constructor
 
@@ -25,6 +28,12 @@ public class BoardExample1 {
         System.out.println("-------------------------------------------------------");
         System.out.println("메인 메뉴: 1.Create | 2.Read | 3.Clear | 4.Exit");
         System.out.print("메뉴 선택: ");
+        String menuNumber = scanner.nextLine();
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+        BoardExample boardExample = new BoardExample();
+        boardExample.list();
     }
 }
