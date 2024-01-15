@@ -178,6 +178,20 @@ public class BoardExample {
                 System.out.println("내용: " + board.getBcontent());
                 System.out.println("작성자: " + board.getBwriter());
                 System.out.println("날짜: " + board.getBdate());
+
+                // 보조 메뉴 출력(삭제, 수정 기능 추가)
+                System. out.println("----------------------");
+                System. out.println("보조 메뉴: 1.Update | 2.Delete | 3.List");
+                System. out.print("메뉴 선택: ");
+                String menuNumber = scanner.nextLine();
+                System. out.println();
+
+                if (menuNumber.equals("1")) {
+
+                } else if (menuNumber.equals("2")) {
+
+                }
+
                 System.out.println("#############");
             }
 
