@@ -117,6 +117,32 @@ public class BoardExample {
         System.out.print("작성자: ");
         board.setBwriter(scanner.nextLine());
 
+        // 보조 메뉴 선택창
+        System.out.println("-------------------------------------------------------");
+        System.out.println("보조 메뉴: 1.Ok | 2.Cancel");
+        System.out.print("메뉴 선택: ");
+        String menuNo = scanner.nextLine();
+
+        if (menuNo.equals("1")) {
+            // boards 테이블에 게시물 정보 저장
+            try {
+                String sql = "" +
+                        "INSERT INTO boards (btitle, bcontent, bwriter, bdate) " +
+                        "VALUES (?, ?, ?, now())";
+
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, board.getBtitle());
+                preparedStatement.setString(2, board.getBcontent());
+                preparedStatement.setString(3, board.getBwriter());
+
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+                exit();
+            }
+        }
+
         list();
     }
 
