@@ -2,6 +2,7 @@ package section_20_database.ex11_board;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class BoardExample {
@@ -21,6 +22,9 @@ public class BoardExample {
                     "",
                     ""
             );
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            exit();
         }
     }
 
