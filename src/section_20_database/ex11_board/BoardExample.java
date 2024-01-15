@@ -101,7 +101,22 @@ public class BoardExample {
     }
 
     public void create() {
-        System.out.println("create");
+//        System.out.println("create");
+        // 작성한 게시글 담을 Board 객체
+        Board board = new Board();
+
+        // 입력 받기
+        System.out.println("[새 게시물 입력]");
+
+        System.out.print("제목: ");
+        board.setBtitle(scanner.nextLine());
+
+        System.out.print("내용: ");
+        board.setBcontent(scanner.nextLine());
+
+        System.out.print("작성자: ");
+        board.setBwriter(scanner.nextLine());
+
         list();
     }
 
