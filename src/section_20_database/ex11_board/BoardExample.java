@@ -147,7 +147,48 @@ public class BoardExample {
     }
 
     public void read() {
-        System.out.println("read");
+//        System.out.println("read");
+        System.out.println("[게시물 읽기]");
+        System.out.print("bno: ");
+        int bno = Integer.parseInt(scanner.nextLine());
+
+        // boards 테이블에서 해당 게시물을 가져와 출력
+        try {
+            String sql = "" +
+                    "SELECT bno, btitle, bcontent, bwriter, bdate " +
+                    "FROM boards " +
+                    "WHERE bno=?";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, bno);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                Board board = new Board();
+
+                board.setBno(resultSet.getInt("bno"));
+                board.setBtitle(resultSet.getString("btitle"));
+                board.setBcontent(resultSet.getString("bcontent"));
+                board.setBwriter(resultSet.getString("bwriter"));
+                board.setBdate(resultSet.getDate("bdate"));
+
+                System.out.println("#############");
+                System.out.println("번호: " + board.getBno());
+                System.out.println("제목: " + board.getBtitle());
+                System.out.println("내용: " + board.getBcontent());
+                System.out.println("작성자: " + board.getBwriter());
+                System.out.println("날짜: " + board.getBdate());
+                System.out.println("#############");
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            exit();
+        }
+
         list();
     }
 
