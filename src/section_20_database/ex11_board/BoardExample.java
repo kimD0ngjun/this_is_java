@@ -30,6 +30,29 @@ public class BoardExample {
         System.out.print("메뉴 선택: ");
         String menuNumber = scanner.nextLine();
         System.out.println();
+
+        switch (menuNumber) {
+            case "1" -> create();
+            case "2" -> read();
+            case "3" -> clear();
+            case "4" -> exit();
+        }
+    }
+
+    public void create() {
+        System.out.println("create");
+    }
+
+    public void read() {
+        System.out.println("read");
+    }
+
+    public void clear() {
+        System.out.println("clear");
+    }
+
+    public void exit() {
+        System.exit(0);
     }
 
     public static void main(String[] args) {
