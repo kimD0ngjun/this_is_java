@@ -2,6 +2,8 @@ package section_20_database.ex11_board;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -36,8 +38,22 @@ public class BoardExample {
         System.out.println("-------------------------------------------------------");
         System.out.printf("%-6s%-12s%-16s%-40s\n", "no", "writer", "date", "title");
         System.out.println("-------------------------------------------------------");
-        System.out.printf("%-6s%-12s%-16s%-40s \n", "1", "winter", "2022.01.27", "게시판에 오신 것을 환영합니다.");
-        System.out.printf("%-6s%-12s%-16s%-40s \n", "2", "winter", "2022.01.27", "올 겨울은 많이 춥습니다.");
+//        System.out.printf("%-6s%-12s%-16s%-40s \n", "1", "winter", "2022.01.27", "게시판에 오신 것을 환영합니다.");
+//        System.out.printf("%-6s%-12s%-16s%-40s \n", "2", "winter", "2022.01.27", "올 겨울은 많이 춥습니다.");
+
+        // boards 테이블에서 게시물 정보 가지고 오기
+        try {
+            String sql = "" +
+                    "SELECT bno, btitle, bcontent, bwriter, bdate " +
+                    "FROM boards " +
+                    "ORDER BY bno DESC"; // SQL 쿼리 표현
+
+            // PreparedStatement를 사용하여 SQL 인젝션 공격을 방지
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            // 쿼리 실행
+            ResultSet resultSet = preparedStatement.executeQuery();
+        }
 
         mainMenu();
     }
