@@ -262,8 +262,27 @@ public class BoardExample {
         list();
     }
 
+    // 게시판 전체 삭제
     public void clear() {
-        System.out.println("clear");
+//        System.out.println("clear");
+        System.out.println("[게시물 전체 삭제]");
+        System.out.println("-------------------------------------------------------");
+        System.out.println("보조 메뉴: 1.Ok | 2.Cancel");
+        System.out.print("메뉴 선택: ");
+        String menuNumber = scanner.nextLine();
+
+        if (menuNumber.equals("1")) {
+            try {
+                String sql = "TRUNCATE TABLE boards";
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+                exit();
+            }
+        }
+
         list();
     }
 
