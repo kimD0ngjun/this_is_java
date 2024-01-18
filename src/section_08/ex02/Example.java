@@ -8,6 +8,8 @@ public class Example {
 
         ExampleInterface example = new Child();
         example.abstractMethod();
+        System.out.println();
+
         example.defaultMethod();
     }
 }
