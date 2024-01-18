@@ -2,8 +2,12 @@ package section_07.ex07;
 
 public class Example {
     public static void main(String[] args) {
-        Parent e = new Child();
-        e.method1();
-        e.method2();
+        Parent p = new Child();
+        p.method1();
+        p.method2();
+//        p.method3();
+
+        Child c = (Child) p;
+        c.method3();
     }
 }
