@@ -1,4 +1,4 @@
-package section_08.ex02;
+package section_08_interface.ex02;
 
 public class Example {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package section_08.ex02;
+package section_08_interface.ex02;
 
 public interface ExampleInterface {
     String constantFiled = "인터페이스의 상수 필드"; // 상수 필드드(public)

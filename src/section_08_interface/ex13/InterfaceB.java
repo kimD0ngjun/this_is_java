@@ -1,4 +1,4 @@
-package section_08.ex13;
+package section_08_interface.ex13;
 
 public non-sealed interface InterfaceB extends InterfaceA {
 }
