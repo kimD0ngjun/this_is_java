@@ -1,4 +1,4 @@
-package section_07.ex07;
+package section_07_inheritance.ex07;
 
 public class Example {
     public static void main(String[] args) {

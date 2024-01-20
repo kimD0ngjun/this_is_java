@@ -1,4 +1,4 @@
-package section_07.ex10;
+package section_07_inheritance.ex10;
 
 public class Cat extends Animal {
     public Cat(String name) {
