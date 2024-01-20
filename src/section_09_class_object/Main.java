@@ -1,6 +1,4 @@
-package section_9;
-
-import section_9.Nested.Member2;
+package section_09_class_object;
 
 public class Main {
     public static void main(String[] args) {
