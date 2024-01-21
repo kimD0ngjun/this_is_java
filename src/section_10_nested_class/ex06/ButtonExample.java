@@ -30,5 +30,7 @@ public class ButtonExample {
         }
 
         button.setClickListener(new CancelListener());
+
+        button.click();
     }
 }
