@@ -15,5 +15,15 @@ public class A {
         void method() {
             System.out.println("B_method");
         }
+
+        void innerPrint() {
+            System.out.println(this.field);
+            this.method();
+        }
+
+        void outerPrint() {
+            System.out.println(A.this.field);
+            A.this.method();
+        }
     }
 }
