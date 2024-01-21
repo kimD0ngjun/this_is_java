@@ -26,4 +26,14 @@ public class A {
             A.this.method();
         }
     }
+
+    void useBInnerPrint() {
+        B b = new B();
+        b.innerPrint();
+    }
+
+    void userBOuterPrint() {
+        B b = new B();
+        b.outerPrint();
+    }
 }
