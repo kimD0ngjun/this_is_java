@@ -20,5 +20,15 @@ public class ButtonExample {
         button.click(); // 그리고 메소드 실행~
 
         /* 다형성을 추가로 활용하자면... */
+
+        // 이번엔 또 다른 인터페이스 구현 클래스 선언
+        class CancelListener implements Button.ClickListener {
+            @Override
+            public void onClick() {
+                System.out.println("click Cancel Button");
+            }
+        }
+
+        button.setClickListener(new CancelListener());
     }
 }
