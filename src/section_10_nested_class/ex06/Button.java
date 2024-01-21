@@ -6,4 +6,17 @@ public class Button {
         // abstract method
         void onClick();
     }
+
+    // field
+    private ClickListener clickListener;
+
+    // method (setter) for polymorphism
+    public void setClickListener(ClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
+    // method
+    public void click() {
+        this.clickListener.onClick();
+    }
 }
