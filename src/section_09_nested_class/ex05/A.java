@@ -1,4 +1,4 @@
-package section_10_nested_class.ex05;
+package section_09_nested_class.ex05;
 
 public class A {
     String field = "A_field"; // 외부 클래스 인스턴스 필드

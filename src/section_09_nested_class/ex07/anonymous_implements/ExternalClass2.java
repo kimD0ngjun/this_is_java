@@ -1,4 +1,4 @@
-package section_10_nested_class.ex07.anonymous_implements;
+package section_09_nested_class.ex07.anonymous_implements;
 
 public class ExternalClass2 {
     private Anonymous anonymous = new Anonymous() {

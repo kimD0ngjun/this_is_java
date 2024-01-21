@@ -1,4 +1,4 @@
-package section_10_nested_class.ex06;
+package section_09_nested_class.ex06;
 
 public class ButtonExample {
     public static void main(String[] args) {
