@@ -1,7 +1,7 @@
 package section_10_nested_class.ex06;
 
 public class A {
-    String field = "A_filed"; // 외부 클래스 인스턴스 필드
+    String field = "A_field"; // 외부 클래스 인스턴스 필드
 
     // 외부 클래스 메소드
     void method() {
