@@ -16,3 +16,7 @@ module module_a { // module 모듈 이름
     requires module_c;
 } 
 ```
+
+4. 참조 링크
+>https://whitepaek.tistory.com/47 : 모듈 생성
+> https://velog.io/@dbswns1101/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%84%B0%EB%94%94-8%EC%A3%BC%EC%B0%A8-10%EC%9E%A5-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EC%99%80-%EB%AA%A8%EB%93%88#2-%EB%AA%A8%EB%93%88 : 디스크립터 관련
