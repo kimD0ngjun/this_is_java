@@ -15,6 +15,8 @@ module module_a { // module 모듈 이름
     requires module_b; // requires 외부 기타 모듈
     requires module_c;
 } 
+
+// 디스크립터 위치는 src 파일 바깥에 하는듯? 그래야 Main 클래스에서 작동되더라고
 ```
 
 4. 참조 링크
