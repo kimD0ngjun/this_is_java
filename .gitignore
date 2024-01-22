@@ -4,6 +4,7 @@ out/
 !**/src/test/**/out/
 this_is_java.iml
 src/section_20_database/ex06_save_data/BoardInsertExample.java
+.idea
 
 ### Eclipse ###
 .apt_generated
