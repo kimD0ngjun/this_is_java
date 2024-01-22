@@ -33,5 +33,14 @@ public class AutoCloseableExample {
         } catch(Exception e) {
             System.out.println("예외 처리: " + e.getMessage());
         }
+
+//        [MyResource(A) 열기]
+//        [MyResource(B) 열기]
+//        [MyResource(A) 읽기]
+//        [MyResource(B) 읽기]
+//        [MyResource(B) 닫기]
+//        [MyResource(A) 닫기]
+
+        // 이런 순서로 나오는 이유는, 리소스는 열린 순서의 역순으로 닫히기 때문
     }
 }
