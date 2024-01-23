@@ -10,4 +10,16 @@ public class Example {
         this.number = number;
         this.info = info;
     }
+
+    @Override
+    // Object 클래스의 메소드 equals(Object object) 오버라이딩
+    public boolean equals(Object object) {
+        if(object instanceof Example example) {
+            if (id.equals(example.id)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
