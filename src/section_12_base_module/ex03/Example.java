@@ -28,4 +28,10 @@ public class Example {
     public int hashCode() {
         return number + id.hashCode();
     }
+
+    @Override
+    // Object 클래스의 메소드 toString() 오버라이딩
+    public String toString() {
+        return id + " : " + info;
+    }
 }
