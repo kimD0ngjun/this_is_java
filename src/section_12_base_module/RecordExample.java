@@ -1,4 +1,4 @@
-package section_12;
+package section_12_base_module;
 
 public class RecordExample {
     public static void main(String[] args) {

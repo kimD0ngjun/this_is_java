@@ -1,4 +1,4 @@
-package section_12;
+package section_12_base_module;
 
 public class PersonDto {
     private final String name;
