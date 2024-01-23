@@ -1,4 +1,4 @@
-package section_12_base_module;
+package section_12_base_module.ex04;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
