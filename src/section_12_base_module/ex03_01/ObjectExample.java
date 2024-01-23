@@ -1,4 +1,4 @@
-package section_12_base_module.ex03;
+package section_12_base_module.ex03_01;
 
 public class ObjectExample {
     private String id;
