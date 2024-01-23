@@ -22,4 +22,10 @@ public class Example {
 
         return false;
     }
+
+    @Override
+    // Object 클래스의 메소드 hashCode() 오버라이딩
+    public int hashCode() {
+        return number + id.hashCode();
+    }
 }
