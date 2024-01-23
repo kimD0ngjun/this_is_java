@@ -1,11 +1,11 @@
 package section_12_base_module.ex03;
 
-public class Example {
+public class ObjectExample {
     private String id;
     private int number;
     private String info;
 
-    public Example(String id, int number, String info) {
+    public ObjectExample(String id, int number, String info) {
         this.id = id;
         this.number = number;
         this.info = info;
@@ -14,8 +14,8 @@ public class Example {
     @Override
     // Object 클래스의 메소드 equals(Object object) 오버라이딩
     public boolean equals(Object object) {
-        if(object instanceof Example example) {
-            if (id.equals(example.id)) {
+        if(object instanceof ObjectExample objectExample) {
+            if (id.equals(objectExample.id)) {
                 return true;
             }
         }
