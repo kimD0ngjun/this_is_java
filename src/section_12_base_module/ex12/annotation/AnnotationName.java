@@ -1,4 +1,4 @@
-package other.annotation;
+package section_12_base_module.ex12.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
