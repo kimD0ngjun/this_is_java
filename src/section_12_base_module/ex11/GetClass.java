@@ -4,6 +4,8 @@ package section_12_base_module.ex11;
 // 메타 정보 : 패키지 정보, 타입 정보, 멤버(생성자, 필드, 메소드) 정보 등을 일컫고
 // 이런 메타 정보를 프로그램에서 읽고 수정하는 행위를 리플렉션(reflection)이라고 한다.
 
+// 이거 외에도 class 파일 저장 위치를 통해 getResource(파일명).getPath() 메소드를 활용해서 파일 절대경로를 얻을 수 있다
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
