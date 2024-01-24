@@ -1,3 +1,5 @@
+## 어노테이션 개념
+
 ### 어노테이션(annotation) 목적
 
 - 컴파일 시 사용하는 정보 전달
@@ -49,3 +51,19 @@ public @interface AnnotationName {
 @Annotationname(value="값", prop2=3);
 // value 속성과 다른 속성 값을 동시에 주려면 value 속성 이름 언급 필요
 ```
+
+## 어노테이션 적용과 유지
+
+>적용 대상 종류 `ElementType` 열거 상수
+>- TYPE : 클래스, 인터페이스, 열거 타입
+>- ANNOTATION_TYPE : 어노테이션
+>- FIELD : 필드
+>- CONSTRUCTOR : 생성자
+>- METHOD : 메소드
+>- LOCAL_VARIABLE : 로컬 변수
+>- PACKAGE : 패키지
+
+>유지 정책 종류 `RetentionPolicy` 열거 상수
+>- SOURCE : 컴파일할 때 적용해서 컴파일된 후에 제거
+>- CLASS : 메모리 로딩할 때 적용해서 메모리 로딩 끝나고 제거
+>- RUNTIME : 실행할 때 적용해서 얘는 계속 유지됨
