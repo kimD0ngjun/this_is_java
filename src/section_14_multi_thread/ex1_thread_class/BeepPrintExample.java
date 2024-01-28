@@ -7,7 +7,9 @@ public class BeepPrintExample {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         for (int i = 0; i < 5; i++) {
             toolkit.beep();
-            try { Thread.sleep(500); } catch(Exception e) {}
+            try { Thread.sleep(500);
+                // sleep 메소드는 Thread 클래스의 정적 메소드
+            } catch(Exception e) {}
 
         } // 뾱 뾱 뾱 뾱 뾱 들린 다음에...
 
