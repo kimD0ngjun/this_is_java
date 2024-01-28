@@ -15,7 +15,11 @@ public class WorkThread extends Thread{
                 System.out.println(getName() + ": 작업처리");
             } else {
                 Thread.yield();
-            } // elsd 구문이 빠지면 대기 상태로 돌아가는 게 아니라 걍 완전 종료시켜버리는 구나...
+                // 다른 스레드를 실행 상태로 양보하고
+                // 본인은 실행 대기 상태로 회귀한다
+            }
+            // else 구문이 빠지면 대기 상태로 돌아가는 게 아니라
+            // 걍 완전 종료시켜버리는 구나...
         }
     }
 }
