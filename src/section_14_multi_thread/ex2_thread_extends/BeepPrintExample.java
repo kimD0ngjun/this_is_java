@@ -2,6 +2,7 @@ package section_14_multi_thread.ex2_thread_extends;
 
 import java.awt.Toolkit;
 
+// 익명 구현 객체 활용
 public class BeepPrintExample {
     public static void main(String[] args) {
         Thread thread = new Thread(new Runnable() {
