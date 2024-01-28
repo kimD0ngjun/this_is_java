@@ -2,6 +2,7 @@ package section_14_multi_thread.ex3_no_named_object;
 
 import java.awt.Toolkit;
 
+// 익명 자식 객체 활용
 public class BeepPrintExample {
     public static void main(String[] args) {
         Thread thread = new Thread() {
