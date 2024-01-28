@@ -12,6 +12,9 @@ public class ThreadNameExample {
                 @Override
                 public void run() {
                     System.out.println(getName() + " 실행");
+                    // 애시당초 getName() 메소드가 Thread 클래스에 정의되어 있으므로
+                    // 상속받는 익명 자식 역시 getName() 메소드를 호출할 수 있다.
+                    // 즉 별도의 객체 참조변수를 할당할 필요가 없다.
                 }
             };
             threadA.start();
