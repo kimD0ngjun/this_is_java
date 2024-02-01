@@ -13,6 +13,9 @@ public class ArrayListExample {
         list.add(new Board("제목4", "내용4", "글쓴이4"));
         list.add(new Board("제목5", "내용5", "글쓴이5"));
 
+        // 중복 추가 가능
+        list.add(new Board("제목1", "내용1", "글쓴이1"));
+
         int size = list.size();
         System.out.println("총 객체 수 : " + size + "\n");
 
