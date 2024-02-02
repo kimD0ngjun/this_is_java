@@ -1,17 +1,20 @@
 package section_15_collection.map.hashTable;
 
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 
 public class HashTableExample {
     public static void main(String[] args) {
         Map<String, Integer> map = new Hashtable<>();
+//        Map<String, Integer> map = new HashMap<>();
 
         Thread threadA = new Thread(){
             @Override
             public void run() {
                 for (int i = 1; i <= 1000; i++) {
                     map.put(String.valueOf(i), i);
+                    System.out.println("키 : " + i + ", 값 : " + map.get(String.valueOf(i)));
                 }
             }
         };
@@ -21,6 +24,7 @@ public class HashTableExample {
             public void run() {
                 for (int i = 1001; i <= 2000; i++) {
                     map.put(String.valueOf(i), i);
+                    System.out.println("키 : " + i + ", 값 : " + map.get(String.valueOf(i)));
                 }
             }
         };
