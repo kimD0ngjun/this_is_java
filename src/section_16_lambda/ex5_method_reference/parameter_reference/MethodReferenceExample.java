@@ -3,6 +3,9 @@ package section_16_lambda.ex5_method_reference.parameter_reference;
 public class MethodReferenceExample {
     public static void main(String[] args) {
         Person person = new Person();
+
+        person.ordering((x, y) -> x.compareToIgnoreCase(y));
+
         person.ordering(String::compareToIgnoreCase);
     }
 }
