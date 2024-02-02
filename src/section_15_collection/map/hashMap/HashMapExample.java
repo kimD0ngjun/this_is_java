@@ -23,21 +23,21 @@ public class HashMapExample {
         System.out.println(key + " : " + value);
         System.out.println();
 
-        Set<String> keySet = map.keySet();
-        Iterator<String> keyIterator = keySet.iterator();
-        while (keyIterator.hasNext()) {
-            String k = keyIterator.next();
+        Set<String> keySet = map.keySet(); // 모든 키를 Set에 담아서 반환
+        Iterator<String> keyIterator = keySet.iterator(); // 반복자 생성
+        while (keyIterator.hasNext()) { // 키 객체의 반복자가 계속 존재할 때까지 반복
+            String k = keyIterator.next(); // 순회되는 키 객체 뽑아내기
             Integer v = map.get(k);
             System.out.println(k + " : " + v);
         }
         System.out.println();
 
-        Set<Entry<String, Integer>> entrySet = map.entrySet();
-        Iterator<Entry<String, Integer>> entryIterator = entrySet.iterator();
-        while (entryIterator.hasNext()) {
-            Entry<String, Integer> entry = entryIterator.next();
-            String k = entry.getKey();
-            Integer v = entry.getValue();
+        Set<Entry<String, Integer>> entrySet = map.entrySet(); // 모든 엔트리를 Set에 담아서 반환
+        Iterator<Entry<String, Integer>> entryIterator = entrySet.iterator(); // 반복자 생성
+        while (entryIterator.hasNext()) { // 엔트리의 반복자가 계속 존재할 때까지 반복
+            Entry<String, Integer> entry = entryIterator.next(); // 순회되는 엔트리 뽑아내기
+            String k = entry.getKey(); // 해당 엔트리 키
+            Integer v = entry.getValue(); // 해당 엔트리 값
             System.out.println(k + " : " + v);
         }
         System.out.println();
