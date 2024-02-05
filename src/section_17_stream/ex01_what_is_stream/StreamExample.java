@@ -26,11 +26,13 @@ public class StreamExample {
 
         System.out.println();
 
+        // 람다식(스트림의 활용 수단)
         Stream<String> stream1 = set.stream();
         stream1.forEach(item -> System.out.println(item));
 
         System.out.println();
 
+        // 람다식의 메소드 참조
         Stream<String> stream2 = set.stream();
         stream2.forEach(System.out::println);
     }
