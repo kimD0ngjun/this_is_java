@@ -13,7 +13,7 @@ public class StreamExample {
         System.out.println();
 
         int[] ints = {1, 2, 3, 4, 5};
-//        Stream<Integer> integerStream = Arrays.stream(ints); // 에러가 난 이유는 그냥 Stream은 문자열 요소 스트림화
+//        Stream<Integer> integerStream = Arrays.stream(ints); // 에러가 난 이유는 그냥 Stream은 객체 요소 스트림화
         IntStream intStream = Arrays.stream(ints); // int 배열의 데이터 처리를 위한 intStream화
         intStream.forEach(item -> System.out.print(item + ", "));
     }
