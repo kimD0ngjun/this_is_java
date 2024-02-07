@@ -11,6 +11,6 @@ public class MapExample {
         studentList.add(new Student("홍길동", 87));
 
         studentList.stream().mapToInt(Student::getScore)
-                .forEach(System.out::println); // Student를 score 스트림으로 변환
+                .forEach(System.out::println); // Student 스트림을 score 스트림으로 변환
     }
 }
