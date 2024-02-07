@@ -26,8 +26,8 @@ public class CollectExample {
                         Collectors.toMap(
 //                                e -> e.getName(),
 //                                e -> e.getScore()
-                                Student::getName,
-                                Student::getScore
+                                Student::getName, // Student 객체에서 키가 될 부분
+                                Student::getScore // Student 객체에서 값이 될 부분
                         )
                 );
 
