@@ -51,7 +51,5 @@ public class ParallelExample {
                     parallelTime < time ? "병렬 스트림 처리가 더 빠름" : "일반 스트림 처리가 더 빠름"
             );
         }
-
-
     }
 }
